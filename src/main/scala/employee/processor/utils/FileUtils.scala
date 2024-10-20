@@ -30,10 +30,10 @@ object FileUtils {
    */
   def readDepartmentData(filePath: String = InputFolder,
                          fileType: String = FileType,
-                         delimiter: String = Delimiter): LazyList[(String, RDD[Employee])] = {
+                         delimiter: String = Delimiter): Stream[(String, RDD[Employee])] = {
 
     val fs = FileSystem.get(sparkContext.hadoopConfiguration)
-    val status = fs.listStatus(new Path(filePath)).to(LazyList)
+    val status = fs.listStatus(new Path(filePath)).toStream
 
     status
       .map(fileStatus => fileStatus.getPath.toString)
