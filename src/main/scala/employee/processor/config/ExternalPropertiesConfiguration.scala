@@ -1,7 +1,6 @@
 package employee.processor.config
 
 import com.typesafe.config.{Config, ConfigFactory}
-import org.joda.time.format.{DateTimeFormat, DateTimeFormatter}
 
 import scala.util.{Failure, Success, Try}
 
@@ -15,7 +14,7 @@ object ExternalPropertiesConfiguration {
   val SparkMaster: String = getOrDefaultVariable("app.spark_master", "local[*]")
   val SparkAppName: String = getOrDefaultVariable("app.spark_name", "CsvEmployeeProcessor")
   val FileType: String = getOrDefaultVariable("app.file_type", ".csv")
-  val Delimiter: String = getOrDefaultVariable("app.delimiter", ",")
+  val Delimiter: String = getOrDefaultVariable("app.csv.delimiter", ",")
   val DateFormat: String = getOrDefaultVariable("app.date_format", "yyyy-MM-dd")
 
   private def getEnvironmentVariable(variableName: String): String = {
