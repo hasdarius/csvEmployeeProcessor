@@ -1,6 +1,6 @@
 package employee.processor.utils
 
-import employee.processor.config.ExternalAppConfiguration._
+import employee.processor.config.ExternalPropertiesConfiguration._
 import employee.processor.config.SparkConfiguration.sparkContext
 import employee.processor.model.{AggregatedData, Employee}
 import employee.processor.utils.DateUtils.parseDate

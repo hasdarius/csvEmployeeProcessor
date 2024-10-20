@@ -1,6 +1,6 @@
 package employee.processor.config
 
-import employee.processor.config.ExternalAppConfiguration.{SparkAppName, SparkMaster}
+import employee.processor.config.ExternalPropertiesConfiguration.{SparkAppName, SparkMaster}
 import org.apache.spark.{SparkConf, SparkContext}
 
 object SparkConfiguration {
